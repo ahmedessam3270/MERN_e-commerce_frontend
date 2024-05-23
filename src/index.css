@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-slate-100;
+}
+
+.aside-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*** USER TABLE ***/
+
+.user-table {
+  @apply bg-white;
+}
+
+.user-table th {
+  @apply border text-base font-medium;
+}
+
+.user-table td {
+  @apply border text-base text-center;
+}
+
+/* hide the scrollbar */
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
