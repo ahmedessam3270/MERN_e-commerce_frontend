@@ -43,9 +43,8 @@ This project is a comprehensive full-stack E-commerce application developed usin
 
 ### Front-End
 - **React.js**: For building the user interface and managing state.
-- **Redux**: For state management, particularly for user authentication and cart functionalities.
 - **React Router**: For handling navigation between different pages and components.
-- **Axios**: For making HTTP requests to the backend API.
+- **Tailwind CSS**: For presenting a utility first css styles.
 
 ### Back-End
 - **Node.js**: For server-side JavaScript execution.
@@ -56,8 +55,6 @@ This project is a comprehensive full-stack E-commerce application developed usin
 ### Other Tools and Libraries
 - **JWT (JSON Web Tokens)**: For user authentication and authorization.
 - **Bcrypt.js**: For hashing passwords.
-- **Formik and Yup**: For handling form validation and submission.
-- **Material-UI**: For UI components and styling.
 
 ## Installation and Setup
 
