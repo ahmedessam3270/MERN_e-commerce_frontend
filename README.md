@@ -41,9 +41,19 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Display product cards with details and an "Add to Cart" button.
   - Display a category list. Selecting a category shows the products belonging to that category.
   - Sidebar with checkboxes for categories and radio buttons for sorting products by price (from low to high and vice versa) (Desktop view only).
+  -     
+   ![displaying all the users (desktop version) of the web app](./sample_images/desktop_category_list_products.jpg)
+
+
+  
   - Responsive design: Sidebar is hidden on mobile view.
 - **Product Detail Page:**
   - Display detailed information about a product, including images, price, and description.
+        
+   ![displaying all the users (desktop version) of the web app](./sample_images/product.jpg)
+
+
+  
   - Show related products from the same category.
 
 ### Cart Functionality
@@ -54,9 +64,21 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Displays the number of products in the user's cart.
   - Clicking the icon shows the cart page with all added products.
 - **Cart Page:**
+     
+   ![displaying all the users (desktop version) of the web app](./sample_images/cart.jpg)
+
+
+  
   - Display product cards with options to increase quantity or remove products from the cart.
   - Show a summary card with the net price and total price of all products in the cart.
+- **Search bar:**
+  - Available to use only on desktop view.
+  - Allow the users to search for the products or categories available on the web app.
+   
+   ![displaying all the users (desktop version) of the web app](./sample_images/search_page.jpg)
 
+
+  
 ## Technologies Used
 
 ### Front-End
