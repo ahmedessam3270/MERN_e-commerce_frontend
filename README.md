@@ -1,6 +1,7 @@
 # E-commerce MERN Stack Application
 
 ## Project Overview
+![An image of the front home page (desktop version) of the web app](./sample_images/web_app_overview.jpg)
 
 This project is a comprehensive full-stack E-commerce application developed using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The primary focus of this project is on the front-end development, showcasing advanced React.js skills suitable for a front-end developer position. The application includes user authentication, a dynamic product display, an admin panel for user and product management, and a responsive design for both desktop and mobile views.
 
