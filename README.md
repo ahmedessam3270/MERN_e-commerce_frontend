@@ -68,5 +68,5 @@ This project is a comprehensive full-stack E-commerce application developed usin
 ### Backend Setup
 1. Clone the repository.
    ```sh
-   git clone https://github.com/your-username/ecommerce-mern-app.git
+   git clone https://github.com/ahmedessam3270/MERN_e-commerce
 
