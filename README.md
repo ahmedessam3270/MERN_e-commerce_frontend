@@ -19,20 +19,20 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Display a list of users with their email addresses and roles.
   - Change user roles between "GENERAL" and "ADMIN".
     
-    ![displaying all the users (desktop version) of the web app](./sample_images/changing_user_role.jpg)
+    ![changing the user role from general to admin and vice versa](./sample_images/changing_user_role.jpg)
 
 
     
 - **Product Management Page:**
   - Create new products by entering product details such as name, brand, pricing, selling price, description, images, and category.
     
-    ![displaying all the users (desktop version) of the web app](./sample_images/uploading_products.jpg)
+    ![uploading a product and give the informations about it from price, productName, brandName, images and description](./sample_images/uploading_products.jpg)
 
 
 
   - Update existing product information.
     
-   ![displaying all the users (desktop version) of the web app](./sample_images/modal_window_update_product.jpg)
+   ![updating an existing product](./sample_images/modal_window_update_product.jpg)
 
 
   
@@ -42,7 +42,7 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Display a category list. Selecting a category shows the products belonging to that category.
   - Sidebar with checkboxes for categories and radio buttons for sorting products by price (from low to high and vice versa) (Desktop view only).
   -     
-   ![displaying all the users (desktop version) of the web app](./sample_images/desktop_category_list_products.jpg)
+   ![when clicking on any category laying in the home page, it heads the user to a page containing all the products on this category](./sample_images/desktop_category_list_products.jpg)
 
 
   
@@ -50,7 +50,7 @@ This project is a comprehensive full-stack E-commerce application developed usin
 - **Product Detail Page:**
   - Display detailed information about a product, including images, price, and description.
         
-   ![displaying all the users (desktop version) of the web app](./sample_images/product.jpg)
+   ![the product page amplifying the details of the product and giving the chance to adding it to cart](./sample_images/product.jpg)
 
 
   
@@ -65,7 +65,7 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Clicking the icon shows the cart page with all added products.
 - **Cart Page:**
      
-   ![displaying all the users (desktop version) of the web app](./sample_images/cart.jpg)
+   ![displaying the cart page](./sample_images/cart.jpg)
 
 
   
@@ -75,7 +75,7 @@ This project is a comprehensive full-stack E-commerce application developed usin
   - Available to use only on desktop view.
   - Allow the users to search for the products or categories available on the web app.
    
-   ![displaying all the users (desktop version) of the web app](./sample_images/search_page.jpg)
+   ![search for the desired product or category](./sample_images/search_page.jpg)
 
 
   
