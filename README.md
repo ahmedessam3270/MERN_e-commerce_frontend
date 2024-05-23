@@ -14,14 +14,28 @@ This project is a comprehensive full-stack E-commerce application developed usin
 ### Admin Panel (Accessible only to "ADMIN" users on Desktop View)
 - **User Management Page:**
   ![displaying all the users (desktop version) of the web app](./sample_images/all_users_admin_panel.jpg)
+
+
   - Display a list of users with their email addresses and roles.
   - Change user roles between "GENERAL" and "ADMIN".
+    
     ![displaying all the users (desktop version) of the web app](./sample_images/changing_user_role.jpg)
+
+
+    
 - **Product Management Page:**
   - Create new products by entering product details such as name, brand, pricing, selling price, description, images, and category.
+    
     ![displaying all the users (desktop version) of the web app](./sample_images/uploading_products.jpg)
+
+
+
   - Update existing product information.
+    
    ![displaying all the users (desktop version) of the web app](./sample_images/modal_window_update_product.jpg)
+
+
+  
 ### Product Display and Category Management
 - **Home Page:**
   - Display product cards with details and an "Add to Cart" button.
