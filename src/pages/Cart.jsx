@@ -8,6 +8,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 function Cart() {
   const [cartData, setCartData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingProductIds, setLoadingProductIds] = useState([]);
 
   const context = useContext(Context);
   const loadingCart = new Array(context?.productsInCartCount).fill(null);
@@ -41,6 +42,7 @@ function Cart() {
 
   async function changeQuantity(id, qty, type) {
     if (qty === 1 && type === "decrease") return;
+    setLoadingProductIds((prev) => [...prev, id]);
     const response = await fetch(summaryApi.updateCartProduct.url, {
       method: summaryApi.updateCartProduct.method,
       credentials: "include",
@@ -54,6 +56,9 @@ function Cart() {
       }),
     });
     const responseData = await response.json();
+    setLoadingProductIds((prev) =>
+      prev.filter((productId) => productId !== id)
+    );
     if (responseData.success) {
       fetchCartProducts();
     }
@@ -147,7 +152,7 @@ function Cart() {
                       <button
                         className={`border ${
                           product.quantity === 1
-                            ? "cursor-not-allowed border-slate-600 text-slate-200"
+                            ? "cursor-not-allowed border-slate-600 text-slate-600"
                             : "border-blue-600 text-blue-600 hover:bg-blue-600"
                         }  hover:text-white w-6 h-6 flex justify-center items-center rounded`}
                         onClick={() =>
@@ -157,8 +162,12 @@ function Cart() {
                             "decrease"
                           )
                         }
+                        disabled={loadingProductIds.includes(product?._id)}
                       >
-                        -
+                        {loadingProductIds.includes(product?._id) && (
+                          <AiOutlineLoading className="animate-spin" />
+                        )}
+                        {!loadingProductIds.includes(product?._id) && "-"}
                       </button>
                       <span className="text-sm sm:text-base">
                         {product?.quantity}
@@ -172,8 +181,12 @@ function Cart() {
                             "increase"
                           )
                         }
+                        disabled={loadingProductIds.includes(product?._id)}
                       >
-                        +
+                        {loadingProductIds.includes(product?._id) && (
+                          <AiOutlineLoading className="animate-spin" />
+                        )}
+                        {!loadingProductIds.includes(product?._id) && "+"}
                       </button>
                     </div>
                   </div>

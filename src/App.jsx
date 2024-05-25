@@ -51,10 +51,12 @@ function App() {
       >
         <ToastContainer position="top-center" />
         <Header />
-        <main className="min-h-[calc(100vh-120px)] pt-16">
-          <Outlet />
-        </main>
-        <Footer />
+        <div className="h-16">
+          <main className="min-h-[calc(100vh-120px)] pt-16">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
       </Context.Provider>
     </>
   );
