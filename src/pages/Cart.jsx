@@ -8,6 +8,8 @@ import { AiOutlineLoading } from "react-icons/ai";
 function Cart() {
   const [cartData, setCartData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isChangingQuantity, setIsChangingQuantity] = useState(false);
+  const [isDeletingProduct, setIsDeletingProduct] = useState(false);
   const [loadingProductIds, setLoadingProductIds] = useState([]);
 
   const context = useContext(Context);
@@ -25,7 +27,7 @@ function Cart() {
   );
 
   async function fetchCartProducts() {
-    setIsLoading(true);
+    !isChangingQuantity && !isDeletingProduct && setIsLoading(true);
     const response = await fetch(summaryApi.viewCart.url, {
       method: summaryApi.viewCart.method,
       credentials: "include",
@@ -41,6 +43,7 @@ function Cart() {
   }
 
   async function changeQuantity(id, qty, type) {
+    setIsChangingQuantity(true);
     if (qty === 1 && type === "decrease") return;
     setLoadingProductIds((prev) => [...prev, id]);
     const response = await fetch(summaryApi.updateCartProduct.url, {
@@ -56,6 +59,7 @@ function Cart() {
       }),
     });
     const responseData = await response.json();
+    setIsChangingQuantity(false);
     setLoadingProductIds((prev) =>
       prev.filter((productId) => productId !== id)
     );
@@ -65,6 +69,7 @@ function Cart() {
   }
 
   async function deleteCartProduct(id) {
+    setIsDeletingProduct(true);
     const response = await fetch(summaryApi.deleteCartProduct.url, {
       method: summaryApi.deleteCartProduct.method,
       credentials: "include",
@@ -74,6 +79,7 @@ function Cart() {
       body: JSON.stringify({ _id: id }),
     });
     const responseData = await response.json();
+    setIsDeletingProduct(false);
     if (responseData.success) {
       fetchCartProducts();
       context.fetchUserProductsInCartCount();
