@@ -59,12 +59,13 @@ function Cart() {
       }),
     });
     const responseData = await response.json();
-    setIsChangingQuantity(false);
+
     setLoadingProductIds((prev) =>
       prev.filter((productId) => productId !== id)
     );
     if (responseData.success) {
       fetchCartProducts();
+      setIsChangingQuantity(false);
     }
   }
 
@@ -79,9 +80,10 @@ function Cart() {
       body: JSON.stringify({ _id: id }),
     });
     const responseData = await response.json();
-    setIsDeletingProduct(false);
+
     if (responseData.success) {
       fetchCartProducts();
+      setIsDeletingProduct(false);
       context.fetchUserProductsInCartCount();
     }
   }
