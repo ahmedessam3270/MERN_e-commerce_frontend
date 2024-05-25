@@ -3,6 +3,7 @@ import summaryApi from "../../common";
 import Context from "../context";
 import displayEgyCurrency from "../helpers/displayCurrency";
 import { MdDelete } from "react-icons/md";
+import { AiOutlineLoading } from "react-icons/ai";
 
 function Cart() {
   const [cartData, setCartData] = useState([]);
@@ -95,8 +96,16 @@ function Cart() {
             ? loadingCart.map((el, idx) => (
                 <div
                   key={idx}
-                  className="w-full bg-slate-200 h-32 my-2 border border-slate-300 animate-pulse rounded"
-                ></div>
+                  className="w-full bg-slate-200 h-32 my-2 border border-slate-300 rounded grid grid-cols-[96px,1fr] sm:grid-cols-[128px,1fr] animate-pulse"
+                >
+                  <div className="w-24 h-32 sm:w-32 sm:h-32 bg-slate-300"></div>
+                  <div className="px-2 py-2 sm:px-4 sm:py-2">
+                    <div className="h-4 bg-slate-300 rounded w-3/4 mb-2"></div>
+                    <div className="h-4 bg-slate-300 rounded w-1/4 mb-2"></div>
+                    <div className="h-4 bg-slate-300 rounded w-1/2 mb-2"></div>
+                    <div className="h-4 bg-slate-300 rounded w-1/3"></div>
+                  </div>
+                </div>
               ))
             : cartData.map((product) => (
                 <div
@@ -137,8 +146,10 @@ function Cart() {
                     <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mt-1">
                       <button
                         className={`border ${
-                          product.quantity === 1 ? "cursor-not-allowed" : ""
-                        } border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white w-6 h-6 flex justify-center items-center rounded`}
+                          product.quantity === 1
+                            ? "cursor-not-allowed border-slate-600 text-slate-200"
+                            : "border-blue-600 text-blue-600 hover:bg-blue-600"
+                        }  hover:text-white w-6 h-6 flex justify-center items-center rounded`}
                         onClick={() =>
                           changeQuantity(
                             product?._id,
@@ -173,7 +184,10 @@ function Cart() {
         {/** Products Summary */}
         <div className="mt-5 lg:mt-0 w-full lg:max-w-sm">
           {isLoading ? (
-            <div className="h-36 bg-slate-200 border border-slate-300 animate-pulse"></div>
+            <div className="h-36 bg-slate-200 border border-slate-300 rounded flex flex-col items-center justify-center">
+              <AiOutlineLoading className="animate-spin text-4xl text-blue-600" />
+              <p className="mt-2 text-slate-600">Loading...</p>
+            </div>
           ) : (
             <div className="h-36 bg-white border border-slate-300 rounded flex flex-col">
               <h2 className="text-white bg-slate-700 px-4 py-1 rounded-t">
